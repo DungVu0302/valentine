@@ -9,6 +9,10 @@ body {
   font-size: 50px;
   margin-bottom: 30px;
 }
+#foodquestion2 {
+  font-size: 25px;
+  margin-bottom: 30px;
+}
 .food-item {
   display: inline-block;
   margin: 10px;

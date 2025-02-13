@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="css/flower.css" />
   </head>
   <body>
-    <div id="thankyou"><b>Thank you for being my girlfriend</b></div>
+    <div id="thankyou">
+      <b>Thank you for being my girlfriend</b>
+      <div>
+        <img src="food/love.png" width="50" height="50" alt="Your Image" onclick="myAction()">
+      </div>
+      <div style="font-size: 15px;">
+        <b>Touch my heart</b>
+      </div>
+     
+    </div>
+
     <div class="flower">
       <div class="f-wrapper">
         <div class="flower__line"></div>
@@ -58,5 +68,26 @@
       </div>
       <div class="flower__glass"></div>
     </div>
+    <script>
+      let isPlaying = false; // Khởi tạo biến cờ
+      function myAction() {
+          if (isPlaying) {
+              return; // Nếu đang phát, không làm gì cả
+          }
+          isPlaying = true; // Đánh dấu là đang phát
+          var audio = new Audio("lastpage.m4a");
+          audio.onerror = function(error) {
+              isPlaying = false; // Đặt lại cờ nếu có lỗi
+          };
+          audio.onended = function() {
+              isPlaying = false; // Đặt lại cờ khi phát xong
+          };
+          audio.play().catch(function(error) {
+    
+              isPlaying = false; // Đặt lại cờ nếu có lỗi
+          });
+      }
+      </script>
   </body>
+
 </html>
